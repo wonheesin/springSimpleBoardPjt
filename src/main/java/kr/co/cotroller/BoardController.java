@@ -41,7 +41,7 @@ public class BoardController {
 		
 		service.write(boardVO);
 		
-		return "redirect:/";
+		return "redirect:/board/list";
 	}
 	
 	//게시글 목록 조회

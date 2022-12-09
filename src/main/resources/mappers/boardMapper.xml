@@ -68,13 +68,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 게시물 조회 -->
 	<select id="read" parameterType="int" resultType="kr.co.vo.BoardVO">
-		SELECT		BNO
-					, TITLE
-					, CONTENT
-					, WRITER
-					, REGDATE
-			FROM MP_BOARD
-			WHERE BNO = #{bno}
+		   SELECT BNO         /*고유번호*/
+				, TITLE		  /*제목*/
+				, CONTENT	  /*내용*/
+				, WRITER	  /*작성자*/
+				, REGDATE	  /*작성일*/
+			 FROM MP_BOARD
+			WHERE 1=1
+			  AND BNO = #{bno}
 	</select>
 	
 	<!-- 게시물 수정 -->
@@ -92,5 +93,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE BNO = #{bno}
 	</delete>
 	
+	<!-- 프리시저로 수정하기 -->
+	<select>
+	
+	</select>
 	
 </mapper>
